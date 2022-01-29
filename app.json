@@ -3,9 +3,9 @@
   "deployments": {
     "aspNetCoreWeb": [
       {
-        "name": "BanklyInterviewTest",
+        "name": "Interview-Bankly",
         "parameters": {
-          "appBundle": "BanklyInterviewTest.zip",
+          "appBundle": "site.zip",
           "iisPath": "/",
           "iisWebSite": "Default Web Site"
         }
