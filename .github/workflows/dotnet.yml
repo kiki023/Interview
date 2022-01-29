@@ -32,7 +32,7 @@ jobs:
         run: cd BanklyInterviewTest; dotnet restore; dotnet publish -r win10-x64 --configuration "Release" --self-contained "true" -o ../site;
 
       - name: Generate deployment package 
-        run: zip deploy.zip *.js *.json *.html *.css *.git
+        run: zip BanklyInterviewTest.zip *.js *.json *.html *.css *.git
         
       - name: Beanstalk Deploy
         uses: einaregilsson/beanstalk-deploy@v4
