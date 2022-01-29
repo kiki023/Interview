@@ -34,13 +34,16 @@ jobs:
       - name: Generate deployment package 
         run: cd site; zip ../site.zip *; cd ..; zip [yourApp].zip site.zip aws-windows-deployment-manifest.json
 
-      - name: Deploy to EB
-        uses: einaregilsson/beanstalk-deploy@v16
+      - name: Beanstalk Deploy
+        uses: einaregilsson/beanstalk-deploy@v4
         with:
-          aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws_access_key:  ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          region: us-west-1
           application_name: Interview-Bankly
           environment_name: Interviewbankly-env
           version_label: ${{ github.run_id }}
-          region: us-west-1
-          deployment_package: [yourApp].zip
+          deployment_package: BanklyInterviewTest.zip
+      
+      
+        
