@@ -42,7 +42,7 @@ jobs:
           region: us-west-1
           application_name: Interview-Bankly
           environment_name: Interviewbankly-env
-          version_label: ${{ github.run_id }}
+          version_label: 1765094963
           deployment_package: site.zip
       
       
