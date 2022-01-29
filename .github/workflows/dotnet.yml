@@ -32,16 +32,16 @@ jobs:
         run: cd BanklyInterviewTest; dotnet restore; dotnet publish -r win10-x64 --configuration "Release" --self-contained "true" -o ../site;
 
       - name: Generate deployment package 
-        run: cd site; zip ../site.zip *; cd ..; zip BanklyInterviewTest.zip site.zip aws-windows-deployment-manifest.json
-
+        run: zip deploy.zip *.js *.json *.html *.css *.git
+        
       - name: Beanstalk Deploy
         uses: einaregilsson/beanstalk-deploy@v4
         with:
           aws_access_key:  ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           region: us-west-1
-          application_name: Interview-Bankly
-          environment_name: Interviewbankly-env
+          application_name: Interview2-Bankly
+          environment_name: Interviewbankly2-env
           version_label: ${{ github.run_id }}
           deployment_package: BanklyInterviewTest.zip
       
