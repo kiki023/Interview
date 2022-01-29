@@ -41,7 +41,7 @@ jobs:
           aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           region: us-west-1
           application_name: Interview2-Bankly
-          environment_name: Interviewbankly2-env
+          environment_name: Interview2bankly-env
           version_label: ${{ github.run_id }}
           deployment_package: BanklyInterviewTest.zip
       
